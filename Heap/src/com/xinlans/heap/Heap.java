@@ -3,7 +3,6 @@ package com.xinlans.heap;
 public class Heap
 {
     private static final int INIT_CAPACITY = 2;
-    private static final int ROOT_POS = 1;
     private int[] data;
     private int currentSize;
 
@@ -62,7 +61,7 @@ public class Heap
             currentSize--;
         }
         data[currentSize + 1] = 0;
-        //System.out.println("now-->" + toString());
+        // System.out.println("now-->" + toString());
         return ret;
     }
 
@@ -159,6 +158,15 @@ public class Heap
     private int getRightChildAddress(int p)
     {
         return p * 2 + 1;
+    }
+
+    public void clear()
+    {
+        for (int i = 1; i <= currentSize; i++)
+        {
+            data[i] = 0;
+        }// end for i
+        currentSize = 0;
     }
 
     @Override
